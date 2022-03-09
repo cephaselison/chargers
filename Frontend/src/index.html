@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Charging stations</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body ng-app="zaptec">
+        <div id="container" ng-controller="mainController" ng-cloak>
+            <div ng-repeat="installation in installations">
+                <h1>{{ installation.name }}</h1>
+                <div class="alert" ng-if="installation.circuitBreakerTripped">
+                    Circuit breaker has been tripped!
+                </div>
+                <!--<pre>{{ getCurrents(installation) | json }}</pre>-->
+
+                <div class="chargers">
+                    <ul>
+                        <li ng-repeat="charger in installation.chargers">
+                            {{ charger.name }}
+                            <span ng-if="charger.connectedVehicle">
+                                (charged: {{ charger.connectedVehicle.batteryChargeWh/1000 }}kWh)
+                            </span>
+                            <ul>
+                                <li>
+                                    <button type="button" ng-click="toggleChargerConnected(charger)">
+                                        <span ng-switch="!!charger.connectedVehicle">
+                                            <span ng-switch-when="true">
+                                                Disconnect
+                                            </span>
+                                            <span ng-switch-when="false">
+                                                Connect
+                                            </span>
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="vendor/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

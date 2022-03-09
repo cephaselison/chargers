@@ -1,0 +1,39 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+    font-family: sans-serif;
+    color: #333;
+}
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 24px;
+}
+button {
+    background-color: #ff6c0c;
+    color: #eee;
+    border: none;
+    border-radius: 2px;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 1em;
+}
+.alert {
+    color: #f8d7da;
+    background-color: #b8555f;
+    border-color: #721c24;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 32px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
