@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -25,6 +26,7 @@ namespace Backend.Controllers
         }
 
         [HttpGet("{installationId}")]
+        [EnableCors("MyPolicy")]
         public IEnumerable<Charger> Get(Guid installationId)
         {
             var installation = GetInstallation(installationId);
@@ -35,6 +37,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost("{id}/connect")]
+        [EnableCors("MyPolicy")]
         public Charger Connect(Guid id)
         {
             var charger = GetCharger(id);
@@ -43,6 +46,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost("{id}/disconnect")]
+        [EnableCors("MyPolicy")]
         public Charger Disconnect(Guid id)
         {
             var charger = GetCharger(id);

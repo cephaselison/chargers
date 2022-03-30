@@ -37,6 +37,7 @@ namespace Backend
             {
                 builder.AllowAnyOrigin()
                     .AllowAnyMethod()
+                    .SetIsOriginAllowed(origin => true)
                     .AllowAnyHeader();
             }));
         }

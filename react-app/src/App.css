@@ -1,0 +1,22 @@
+.charge-connect {
+  background-color: #ff6c0c;
+  color: #eee;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 1em;
+  border: 0;
+}
+
+.alert {
+  color: #f8d7da;
+  background-color: #b8555f;
+  border-color: #721c24;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 32px;
+}
+
+.container {
+  padding: 20px
+}
